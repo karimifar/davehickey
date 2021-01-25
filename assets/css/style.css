@@ -1,0 +1,41 @@
+*{
+    font-family: 'itc-galliard', serif;
+}
+.content{
+    padding: 20px;
+}
+img{
+    width:100%;
+}
+.article-wrap{
+    margin:100px 15%;
+    max-width: 800px;
+}
+p{
+    font-size: 20px;
+    margin-bottom: 1em;
+    line-height: 1.3em;
+}
+h1{
+    font-family: 'chapman-extended', sans-serif;
+    font-weight: 900;
+    font-size: 62px;
+    margin-bottom: 1em;
+}
+p .photo-hov{
+    font-style: italic;
+    cursor: zoom-in;
+    transition: color 0.1s ease-in-out;
+    padding: px;
+    
+}
+p .photo-hov:hover{
+    /* text-decoration: underline #eee 2px;
+    text-underline-offset: 2px; */
+    color: rgb(221, 51, 91)
+}
+#temp-div{
+    position: absolute;
+    width: 30%;
+    max-width: 300px;
+}
