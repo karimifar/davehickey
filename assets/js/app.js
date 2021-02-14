@@ -1,34 +1,39 @@
+var mouseX;
+var mouseY;
+var scrolled;
 $(".photo-hov").mouseenter(function(e){
     var imageName = $(this).data("img");
     var imgSrc = "./assets/img/" + imageName;
-    var mouseX = e.clientX +2
-    var mouseY = e.clientY +15
-    var scrolled = window.pageYOffset
+    mouseX = e.clientX +2
+    mouseY = e.clientY +15
+    scrolled = window.pageYOffset
     console.log(scrolled)
-    $("#temp-div").css("left", mouseX)
-    $("#temp-div").css("top", mouseY+ scrolled)
-    $("#temp-div").html("<div class='hov-img-wrap'><img src='"+imgSrc+"'></div>")
+
+    $("#temp-div").html("<div id='hov-img-wrap'><img src='"+imgSrc+"'></div><div id='close-img'>&#9587</div>")
+    $("#hov-img-wrap").css("left", mouseX)
+    $("#hov-img-wrap").css("top", mouseY+ scrolled)
 })
 $(".photo-hov").mousemove(function(e){
-    var mouseX = e.clientX +2
-    var mouseY = e.clientY +15
-    var scrolled = window.pageYOffset
-    $("#temp-div").css("left", mouseX)
-    $("#temp-div").css("top", mouseY+ scrolled)
+    mouseX = e.clientX +2
+    mouseY = e.clientY +15
+    scrolled = window.pageYOffset
+    $("#hov-img-wrap").css("left", mouseX)
+    $("#hov-img-wrap").css("top", mouseY+ scrolled)
 })
 
 $(".photo-hov").click(function(e){
+    // $("#temp-div").css("transform-origin", mouseX+"px "+(mouseY+scrolled)+"px")
     $('.photo-hov').unbind('mouseleave');
     $("#temp-div").addClass("fullscreen")
-    $("#temp-div").css("left", 0)
-    $("#temp-div").css("top", 0)
+    // $("#temp-div").css("left", 0)
+    // $("#temp-div").css("top", 0)
 
 })
 
 
 $("#temp-div").click(function(e){   
     console.log("yo")
-    if (document.getElementsByClassName("hov-img-wrap")[0].contains(e.target)){
+    if (document.getElementById("hov-img-wrap").contains(e.target)){
       // Clicked in box
     } else{
         console.log("cancel")
@@ -36,12 +41,14 @@ $("#temp-div").click(function(e){
         $("#temp-div").empty();
 
         //has to be function
-        $('.mouseOn').bind('mouseleave');
+        $('.mouseOn').bind('mouseleave', emptyTemp);
     }
 });
 
 
-$(".mouseOn").mouseleave(function(){
+$(".mouseOn").mouseleave(emptyTemp)
+
+function emptyTemp(){
     $("#temp-div").empty();
-})
+}
 
