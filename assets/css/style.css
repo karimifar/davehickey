@@ -26,13 +26,14 @@ p .photo-hov{
     font-style: italic;
     cursor: zoom-in;
     transition: color 0.1s ease-in-out;
-    padding: px;
+    text-decoration: underline #BB8588 2px;
+    text-underline-offset: 2px;
+    height: 10px;
     
 }
 p .photo-hov:hover{
-    /* text-decoration: underline #eee 2px;
-    text-underline-offset: 2px; */
-    color: rgb(221, 51, 91)
+    
+    color: #BB8588
 }
 #temp-div{
     position: absolute;
