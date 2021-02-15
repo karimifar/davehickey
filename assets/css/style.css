@@ -26,14 +26,17 @@ p .photo-hov{
     font-style: italic;
     cursor: zoom-in;
     transition: color 0.1s ease-in-out;
-    text-decoration: underline #BB8588 2px;
+    /* text-decoration: underline #BB8588 2px; */
     text-underline-offset: 2px;
-    height: 10px;
+    padding:0 5px 0 2px;
+    background-color: unset;
+    color: #b7094c;
+    width:0;
     
 }
 p .photo-hov:hover{
-    
-    color: #BB8588
+    background-color: #b7094c;
+    color: #fff
 }
 #temp-div{
     position: absolute;
@@ -50,7 +53,7 @@ p .photo-hov:hover{
     background: #ffffff99;
 }
 #hov-img-wrap{
-    width:30%;
+    width:300px;
     position: absolute;
     transition: width 0.2s ease-in-out;
 }
